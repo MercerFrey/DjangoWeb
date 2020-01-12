@@ -15,8 +15,17 @@
       <li><a id = "about"href="/about/"> ABOUT </a></li>
       </ul>
     </nav>
-    <br style="margin-bottom:10px;"/>
+
+
+    <br style="margin-bottom:70px;"/>
     <h1>SELAMMMM :)</h1>
     <p>Bunlar son 3 yazım.</p>
+      {% for article in last3art %}
+        <div class="anasayfa_article">
+          <h2><a href="{% url 'articles:detail' slug=article.slug %}"> {{ article.title }} </a></h2>
+          <p> {{ article.snippet }} </p>
+          <p> {{ article.date }} </p>
+        </div>
+      {% endfor %}
   </body>
 </html>
