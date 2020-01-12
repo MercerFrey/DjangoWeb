@@ -1,0 +1,23 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ARTICLES </title>
+    <link rel = " stylesheet" href= "{% static 'styles.css' %}">
+  <body>
+    <nav>
+      <ul>
+      <li><a id ="home" href="/"> HOMEPAGE </a></li>
+      <li><a id = "articles"href="/articles/"> ARTICLES </a></li>
+      <li><a id = "about"href="/about/"> ABOUT </a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+        <h1><a href="{% url 'articles:list' %}"> <img src="{%static 'fart_button.jpg' %}" height ="80" width= "80" /></a></h1>
+        {%block content%}
+
+        {% endblock %}
+    </div>
+  </body>
+</html>
